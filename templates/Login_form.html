@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .sign-in{
+        text-align: right;
+        margin-right: 120px;
+      }
+    </style>
+    
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+    <!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 300px;
+        "></div>
+  <!-- Background image -->
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5">
+    <div class="sign-in">Already have Account <a href="{% url 'small_login_form'%}">Sign-In</a></div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Sign up now</h2>
+          <div class="container">
+            <div class="container">
+              <div class="container">
+                <form method="POST" >
+                    {% csrf_token %}
+                    <!--Enter name here-->
+
+                    <div class="text-danger">{{error_name}}</div>
+                    <div class="form-outline mb-4">
+                      <input type="text " id="form3Example3" name="Full_name" value="{{value.name}}" class="form-control"/>
+                      <label class="form-label" for="form3Example3">Your Name</label>
+                    </div>
+                   
+                    <!--Enter Mobile Numbert-->
+                    <div class="text-danger">{{error_number}}</div>
+                    <div class="form-outline mb-4">
+                      <input type="text " id="form3Example3" value="{{value.number}}" name="Number" class="form-control" />
+                      <label class="form-label" for="form3Example3">Mobile Number</label>
+                    </div>
+                    
+        
+                    <!-- Email input -->
+                    <div class="text-danger">{{error_Email}}</div>
+                    <div class="form-outline mb-4">
+                      <input type="email" id="form3Example3" value="{{value.usermail}}" name="Email" class="form-control" />
+                      <label class="form-label" for="form3Example3">Email address</label>
+                    </div>
+        
+                    <!-- Password input -->
+                    <div class="text-danger">{{error_password}}</div>
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form3Example4" name="Password" class="form-control" />
+                      <label class="form-label" for="form3Example4">Password</label>
+                    </div>
+                    
+                    <!-- RE-Enter Password input -->
+                    <div class="text-danger">{{error_password2}}</div>
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form3Example4" name="password_again" class="form-control" />
+                      <label class="form-label" for="form3Example4">Password-Again</label>
+                    </div>
+        
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                      <label class="form-check-label" for="form2Example33">
+                        Subscribe to our portal
+                      </label>
+                    </div>
+                    <!--Censel button-->
+                    <button  class="btn btn-primary btn-block mb-4">
+                      <a href="{% url 'index'%}" style="color: white; text-decoration:none;">Cencel</a>
+                    </button>
+        
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up
+                    </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+
+</body>
+</html>

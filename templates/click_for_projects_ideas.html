@@ -1,0 +1,26 @@
+{%extends 'basic.html'%}
+{%load static%}
+{%block content%}
+<div class="file_open_navigation" onclick="fluid_data()">
+	<h3>
+		<a href="{% url 'index' %}">HOME</a><span> &gt; </span><PROJECT-IDIASclear></PROJECT-IDIASclear>
+</div>
+{%endblock%}
+{%block body%}
+<div class="new_project_ideas">
+	<ul>
+		{%for x in obb%}
+		<li style="list-style: none; margin-bottom:15px;">
+			{{x.id}} &nbsp;:&nbsp;&nbsp; {{x.new_name}}
+		</li>
+		{%endfor%}
+	</ul>
+</div>
+	{%block button%}
+	<div class="mover">
+		<div class="button1">
+			<a href="{% url 'index' %}">BACK</a>
+		</div>
+	</div>
+	{%endblock%}
+{%endblock%}

@@ -1,0 +1,43 @@
+{%extends 'basic.html' %}
+{%load static%}
+{%block content%}
+<div class="file_open_navigation" onclick="fluid_data()">
+	<h3>
+		<a href="{% url 'index' %}">HOME</a><span> &gt; </span>{{obb.0.project_name}}
+	</h3>
+</div>
+{%endblock%}
+{%block header%}{%endblock%}
+{%block body%}
+<div class="container" style="margin-bottom: 100px;">
+	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			
+			<div id="one_one" class="project_download_page">
+				<div class="project_download_page_image">
+					<img src="/media/{{obb.0.project_images}}">
+				</div>
+				<div class="project_download_page_written">
+					   <p><b>Project name &nbsp;:&nbsp;</b>{{obb.0.project_name}}</p> 
+					   <p><b>Server Side Scripting &nbsp;:&nbsp;</b>{{obb.0.server_site}}}</p>
+					   <p><b>Client Side Scripting&nbsp;:&nbsp;</b> {{obb.0.Client_Side}}</p>
+					<p><b>Database used&nbsp;:&nbsp; </b>{{obb.0.DataBase}}</p>
+					   <p><b>Project OverView&nbsp;:&nbsp;</b>{{obb.0.project_desc}}
+					</p>
+					<div class="download_rupees">
+						{%if para%}
+						<div class="download"><a href="{%url 'small_login_form'%}"> DOWNLOAD</a></div>
+						<div class="rupees">{{x.project_price}}&#8377;</div>
+						{%else%}
+						<div class="download"><a href="/media/{{obb.0.project_Files}}" download> DOWNLOAD</a></div>
+						<div class="rupees">{{x.project_price}}&#8377;</div>
+						{%endif%}
+					</div>	
+				</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+</div>
+{%endblock%}

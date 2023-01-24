@@ -1,0 +1,29 @@
+{%extends 'basic.html'%}
+{%load static%}
+{%block content%}
+	<div class="file_open_navigation" onclick="fluid_data()">
+		<h3>
+			<a href="{% url 'index' %}">HOME</a><span> &gt; </span>PPT
+		</h3>
+	</div>
+    {%endblock%}
+{%block body%}
+<div class="documentation_page_link">
+	<div class="container">
+		{%for i in document%}
+			<section class="section">
+				<div class="Documentation">
+					<img src="/media/{{i.Ppt_word}}" class="Docu_images">
+				</div>
+				<div class="Docu_information">
+					<h2>{{i.Ppt_name}}</h2>
+					<p class="Docu_paragraph">{{i.Ppt_desc}}</p>
+					<div class="last_button">
+						<button class="button_download">download</button>
+					</div>
+				</div>
+			</section>
+		{% endfor %}
+	</div>
+</div>
+{%endblock%}

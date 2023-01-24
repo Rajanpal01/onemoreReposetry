@@ -1,0 +1,51 @@
+{%extends 'basic.html'%}
+{%load static%}
+{%block body%}
+<div class="magic_box" onclick="fluid_data()">
+	<img src="{% static 'images/img10.jpg' %}">
+</div>
+<div class="more_details">
+	<p>Hey! Now We can think about our own projects basicaly we are ready for take resposiblities for our carrier so first project is 
+		really important in programing carrier,</p><p> we are suppose to cross our basic and jump on intermidean , then next move to advance,
+			It is basically like gym . if you are going in gym and doing good amount of exersize and intake your need then defenately your body get 
+			shape and mussle became strong so learning language is same fi you do practice everyday and and think about your oen logic than your skill 
+			get shape and you became a good programmer ,so before coping another project first try yourself.....</p><p> When you can't figure out what project
+			 you should do then we are have some New and cool project ideas&nbsp; &nbsp;<a href="{% url 'click_for_projects_ideas'%}" style="font-size: 30px;">Click here</a></p>
+	<hr>
+	<br>
+	<br>
+	<h1 style="margin-top: 0;">Project for sale</h1>
+	<p>We are selling some project here what can fulfil your need, We have Basic,&nbsp;Intermidian,&nbsp;and &nbsp;advance project that we are providing in best price We are providing project in Zip file ,&nbsp; Documentation and PPT too Basically full package of last year projects so it will help you a lot in your result</p>
+	<p>Some samples are given below as well as link for zip file and want to checkout more then click on ckeckout button </p>
+	<br>
+	<br>
+</div>
+{%for x in obb%}
+{%if forloop.counter < 8%}
+<div class="box_border_area">
+<div class="Container_box first_container_box">
+	<div class="new_container">
+		<div class="project_name" id="project_name_id"><i class="fa-solid fa-bolt-lightning"></i>{{x.project_name}}</div>
+		<div class="image_logo_conector">
+		<div class="project_image">
+			<img src="/media/{{x.project_images}}">
+		</div>
+		<div class="project_link"><i class="fa-solid fa-link"></i>
+		<div class="link_the_file"><a href="/on_click_here_project/{{x.id}}" class="Online_Crime_reporting_system" id="{{x.id}}" onclick="globle_js(this.id)">CHECKOUT</a><div class="price">&#8377;{{x.project_price}}</div></div>
+		</div>
+		</div>
+	</div>
+</div>
+</div>
+{%endif%}
+{%endfor%}
+{%block button%}
+<div class="mover">
+	<div class="button">
+		<a href="{% url 'more_project'%}">MORE</a>
+	</div>
+</div>
+<script src="{% static 'JavaScript/nevigation_print_name.js'%}"></script>
+<script src="{%static 'JavaScript/new_js.js'%}"></script>
+{%endblock%}
+{%endblock%}

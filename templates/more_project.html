@@ -1,0 +1,40 @@
+{%extends 'basic.html'%}
+{%load static%}
+{%block content%}
+<div class="file_open_navigation" onclick="fluid_data()">
+	<h3>
+		<a href="{% url 'index' %}">HOME</a><span> &gt; </span>MORE-PROJECT<span> &gt; </span>
+	</h3>
+</div>
+{%endblock%}
+{%block body%}
+{%for x in obb%}
+	{%if forloop.counter > 2%}
+	<div class="box_border_area">
+	<div class="Container_box first_container_box">
+		<div class="new_container">
+			<div class="project_name" id="project_name_id"><i class="fa-solid fa-bolt-lightning"></i>{{x.project_name}}</div>
+			<div class="image_logo_conector">
+			<div class="project_image">
+				<img src="/media/{{x.project_images}}">
+			</div>
+			<div class="project_link"><i class="fa-solid fa-link"></i>
+			<div class="link_the_file"><a href="on_click_here_project.html" class="Online_Crime_reporting_system" id="1" onclick="textContentprint(this.className, this.id)">CHECKOUT</a><div class="price">&#8377;990</div></div>
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	{%endif%}
+	{%endfor%}
+	{%block button%}
+	<div class="mover">
+		<div class="button">
+			<a href=" {%url 'more_project_link'%}">MORE</a>
+		</div>
+		<div class="button1">
+			<a href="{% url 'index' %}">BACK</a>
+		</div>
+	</div>
+	{%endblock%}
+{%endblock%}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{%block title%} Mr'S portals {%endblock%}</title>
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href="{%static 'CSS/style.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'common/css/all.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/meadiya_query.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/Login_form_try.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'JavaScript/action.js'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/Docu_PPT.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+	<div class="logo_place" onclick="fluid_data()">
+		<div id="logo_place_right">
+			<div class="C-name">C</div>
+			<div class="onda-name">ONDA PROJECT PORTAL</div>
+		</div>
+		<div id="logo_place_left">
+			<div class="text_typing_animation">
+				<div class="typing">hello</div>
+			</div>
+		</div>
+	</div>
+	<script src="{% static 'JavaScript/action.js'%}"></script>
+	<hr style="margin: 0px; background: black; height: 2px;">
+	{%block content%}
+	<div class="file_open_navigation" onclick="fluid_data()">
+		<h3>
+			HOME
+		</h3>
+	</div>
+    {%endblock%}
+	{%block header%}
+	<header>
+		<div class="header_margin_area">
+			<ul class="first_ul_of_header_margin_area">
+				<li>
+					<input type="search" placeholder="search hear" class="input_type"><a href="#" class="group"><i class="fa-solid fa-magnifying-glass" id="new_i"></i></a>
+				</li>
+				<li>
+					<a href="{%url 'documentation_download_link'%}"  class="active"><i class="fa-solid fa-chess-rook"></i>DOCUMENTATION</a>
+				</li>
+				<li>
+					<a href="{% url 'PPT'%}"><i class="fa-solid fa-file-powerpoint"></i>PPT</a>
+				</li>
+				<li>
+					{%if para%}
+					<a href="#" class="para"><i class="fa-solid fa-user"></i> {{para}}</a>
+					{%endif%}
+	
+				</li>
+			</ul>
+			<ul class="secound_ul_of_header_margin_area">
+				<li>
+					<a onclick="menu_after_responsive()"><i class="fa-solid fa-bars"></i></a>
+				</li>
+				<li>
+					<input type="search" placeholder="search hear" class="input_type"><a href="#" class="group"><i class="fa-solid fa-magnifying-glass" id="new_i"></i></a>
+				</li>
+				
+			</ul>
+		</div>
+	</header>
+	{% comment %}
+	<div class="timepass" id="login_file_details">
+			<div class="form_login_main">
+				
+			<form>
+				<!-- Email input -->
+				<div class="form-outline mb-4">
+				  <input type="email" id="form2Example1" class="form-control" />
+				  <label class="form-label" for="form2Example1">Email address</label>
+				</div>
+			  
+				<!-- Password input -->
+				<div class="form-outline mb-4">
+				  <input type="password" id="form2Example2" class="form-control" />
+				  <label class="form-label" for="form2Example2">Password</label>
+				</div>
+			  
+				<!-- 2 column grid layout for inline styling -->
+				<div class="row mb-4">
+				  <div class="col d-flex justify-content-center">
+					<!-- Checkbox -->
+					<div class="form-check">
+					  <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+					  <label class="form-check-label" for="form2Example31"> Remember me </label>
+					</div>
+				  </div>
+			  
+				  <div class="col">
+					<!-- Simple link -->
+					<a href="#!">Forgot password?</a>
+				  </div>
+				</div>
+			  
+				<!-- Submit button -->
+				<button type="button" class="btn btn-primary btn-block mb-4" id="button">Sign in</button>
+			  
+				<!-- Register buttons -->
+				<div class="text-center">
+				  <p>Not a member? <a href="{%url 'Login_form'%}">Register</a></p>
+				</div>
+			  </form>
+		
+		</div>
+	</div>
+	{% endcomment %}
+	<div class="responsive_nav yuptup">
+		<ul class="click_dropdown">
+			<li>
+				<a href="{%url 'documentation_download_link'%}"  class="active"><i class="fa-solid fa-chess-rook"></i>DOCUMENTATION</a>
+			</li>
+			<li>
+				<a href="{%url 'PPT'%}"><i class="fa-solid fa-file-powerpoint"></i>PPT</a>
+			</li>
+			
+		
+			<li>
+				{%if para%}
+				<a href="#" class="para"><i class="fa-solid fa-user"></i> {{para}}</a>
+				{%else%}
+				<div><a href="/Login_form" class="btn btn-dark stretched-link">Log in</a></div>
+				{%endif%}
+
+			</li>
+
+		</ul>
+	</div>
+	<div class="er">
+    {%endblock%}
+    {%block body%}
+	<div class="magic_box" onclick="fluid_data()">
+		<img src="{% static 'images/img10.jpg' %}">
+	</div>
+	<div class="more_details">
+		<p>Hey! Now We can think about our own projects basicaly we are ready for take resposiblities for our carrier so first project is 
+			really important in programing carrier,</p><p> we are suppose to cross our basic and jump on intermidean , then next move to advance,
+				It is basically like gym . if you are going in gym and doing good amount of exersize and intake your need then defenately your body get 
+				shape and mussle became strong so learning language is same fi you do practice everyday and and think about your oen logic than your skill 
+				get shape and you became a good programmer ,so before coping another project first try yourself.....</p><p> When you can't figure out what project
+				 you should do then we are have some New and cool project ideas&nbsp; &nbsp;<a href="{% url 'click_for_projects_ideas'%}" style="font-size: 30px;">Click here</a></p>
+		<hr>
+		<br>
+		<br>
+		<h1 style="margin-top: 0;">Project for sale</h1>
+		<p>We are selling some project here what can fulfil your need, We have Basic,&nbsp;Intermidian,&nbsp;and &nbsp;advance project that we are providing in best price We are providing project in Zip file ,&nbsp; Documentation and PPT too Basically full package of last year projects so it will help you a lot in your result</p>
+		<p>Some samples are given below as well as link for zip file and want to checkout more then click on ckeckout button </p>
+		<br>
+		<br>
+	</div>
+	{%for x in obb%}
+	{%if forloop.counter < 8%}
+	<div class="box_border_area">
+	<div class="Container_box first_container_box">
+		<div class="new_container">
+			<div class="project_name" id="project_name_id"><i class="fa-solid fa-bolt-lightning"></i>{{x.project_name}}</div>
+			<div class="image_logo_conector">
+			<div class="project_image">
+				<img src="/media/{{x.project_images}}">
+			</div>
+			<div class="project_link"><i class="fa-solid fa-link"></i>
+			<div class="link_the_file"><a href="/on_click_here_project/{{x.id}}" class="Online_Crime_reporting_system" id="{{x.id}}" onclick="globle_js(this.id)">CHECKOUT</a><div class="price">&#8377;{{x.project_price}}</div></div>
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	{%endif%}
+	{%endfor%}
+	<!-- 
+		<div class="box_border_area">
+	<div class="Container_box" >
+		<div class="new_container">
+			<div class="project_name" id="project_name_id"><i class="fa-solid fa-bolt-lightning"></i>KHATA BOOK SYSTEM</div>
+			<div class="image_logo_conector">
+			<div class="project_image">
+				<img src="{% static 'images/try_to_screen_sort (1).jpg'%}">
+			</div>
+			<div class="project_link"><i class="fa-solid fa-link"></i>
+			<br>
+			<div class="link_the_file"><a href="on_click_here_project.html" class="KHATA_BOOK_SYSTEM" id="2" onclick="textContentprint(this.className, this.id)">CHECKOUT</a><div class="price">&#8377;990</div></div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="Container_box"{%comment%} style="background-image: url('images/img6.jpg');"{%endcomment%}>
+		<div class="new_container">
+			<div class="project_name" id="project_name_id"><i class="fa-solid fa-bolt-lightning"></i>Online car detection</div>
+			<div class="image_logo_conector">
+			<div class="project_image">
+				<img src="images/try_to_screen_sort (1).jpg">
+			</div>
+			<div class="project_link"><i class="fa-solid fa-link"></i>
+			<br>
+			<div class="link_the_file"><a href="on_click_here_project.html" class="Online_car_detection" id="3" onclick="textContentprint(this.className, this.id)">CHECKOUT</a><div class="price">&#8377;990</div></div>
+			</div>
+			</div>
+		</div>
+	</div><div class="Container_box"{%comment%} style="background-image: url('images/img6.jpg');"{%endcomment%}>
+		<div class="new_container">
+			<div class="project_name" id="project_name_id"><i class="fa-solid fa-bolt-lightning"></i>KHATAneom BOOK SYSTEM</div>
+			<div class="image_logo_conector">
+			<div class="project_image">
+				<img src="images/try_to_screen_sort (1).jpg">
+			</div>
+			<div class="project_link"><i class="fa-solid fa-link"></i>
+			<br>
+			<div class="link_the_file"><a href="on_click_here_project.html" class="KHATA_neon_BOOK_system" id="4" onclick="textContentprint(this.className, this.id)">CHECKOUT</a><div class="price">&#8377;990</div></div>
+			</div>
+			</div>
+		</div> 	
+	</div>
+	<div class="Container_box"{%comment%} style="background-image: url('images/img6.jpg');"{%endcomment%}>
+		<div class="new_container">
+			<div class="project_name" id="project_name_id"><i class="fa-solid fa-bolt-lightning"></i>KHATAdsjfgasjf BOOK SYSTEM</div>
+			<div class="image_logo_conector">
+			<div class="project_image">
+				<img src="images/try_to_screen_sort (1).jpg">
+			</div>
+			<div class="project_link"><i class="fa-solid fa-link"></i>
+			<br>
+			<div class="link_the_file"><a href="on_click_here_project.html" class="kafjkhsdfhsdfsdufduifeui" id="5" onclick="textContentprint(this.className, this.id)">CHECKOUT</a><div class="price">&#8377;990</div></div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="box_border_area">
+	<div class="Container_box"{%comment%} style="background-image: url('images/img6.jpg');"{%endcomment%}>
+		<div class="new_container">
+			<div class="image_logo_conector">
+			<div class="project_name"></div>
+			<div class="project_image">
+				
+			</div>
+			<div class="project_link"></div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="box_border_area">
+	<div class="Container_box"{%comment%} style="background-image: url('images/img6.jpg');"{%endcomment%}>
+		<div class="new_container">
+			<div class="image_logo_conector">
+			<div class="project_name"></div>
+			<div class="project_image">
+				
+			</div>
+			<div class="project_link"></div>
+		</div>
+		</div>
+	</div>
+	</div>
+	<div class="box_border_area">
+	<div class="Container_box"{%comment%} style="background-image: url('images/img6.jpg');"{%endcomment%}>
+		<div class="new_container">
+			
+			<div class="project_name"></div>
+			<div class="image_logo_conector">
+			<div class="project_image">
+				
+			</div>
+			<div class="project_link"></div>
+		</div>
+		</div>
+	</div>
+	</div>
+	<div class="box_border_area">
+	<div class="Container_box" style="margin-bottom: 50px; background-image:url('images/img6.jpg');">
+		<div class="new_container">
+			<div class="project_name"></div>
+			<div class="image_logo_conector">
+			<div class="project_image">
+				
+			</div>
+			<div class="project_link"></div>
+		</div>
+		</div>
+	</div>
+	</div>
+	-->
+        {%block button%}
+        <div class="mover">
+            <div class="button">
+                <a href="{% url 'more_project'%}">MORE</a>
+            </div>
+        </div>
+        <script src="{% static 'JavaScript/nevigation_print_name.js'%}"></script>
+        <script src="{%static 'JavaScript/new_js.js'%}"></script>
+        {%endblock%}
+    {%endblock%}
+	<footer>
+		<div class="footer_main">
+			<div class="footer_main_upper">
+				<ul>
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">Details</a></li>
+					<li><a href="#">ABOUT US</a></li>	
+				</ul>
+			</div>
+			<div class="footer_main_lower">
+				<div class="span_div"><a href="#">Contact us &nbsp;&nbsp;>>&nbsp;&nbsp;rajan975390@gmail.com</a></div>
+			     <div class="span_div">upload your project here<input type="file" style="padding-left: 20px;"></div>
+			</div>
+		</div>
+		<div class="footer_social">
+			<div class="social_logo">
+				<div class="social_logo_icon_color social_logo_icon_color_one"><a href="#"><img src="{% static 'images/Rajan.png'%}"></a></div>
+				<div class="social_logo_icon_color social_logo_icon_color_two"><a href="#"><img src="{% static 'images/instagram.png'%}"></a></div>
+				<div class="social_logo_icon_color social_logo_icon_color_three"><a href="#"><img src="{% static 'images/linkedin.png'%}"></a></div>
+				<div class="social_logo_icon_color social_logo_icon_color_four"><a href="#"><img src="{% static 'images/twitter.png'%}"></a></div>
+				<div class="social_logo_icon_color social_logo_icon_color_five"><a href="#"><img src="{% static 'images/whatsapp.png'%}"></a></div>
+			</div>
+			<div class="complain_sugestion_box">
+				<label>Complain and suggestion please give us below</label>
+				<textarea></textarea>
+				<div class="input"><a href="#">Submit</a></div>
+			</div>
+		</div>
+	</footer>
+	<div class="copywrite">
+		<div class="copywrite_content">
+			Copywritecontent@Conda-project portal
+		</div>
+	</div>
+</body>
+</html> 
