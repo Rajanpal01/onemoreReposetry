@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jmqwhvzs%zu&v+g01u$@z@fcj7v3##x5=&jd1c-a(ty+gj*o57
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','condaprojects.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','web-production-3785.up.railway.app']
 
 
 # Application definition
