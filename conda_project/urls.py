@@ -19,8 +19,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from Conda import views
 
-from django.views.static import serve
-from django.conf.urls.static import url
 
 
 urlpatterns = [
@@ -36,8 +34,6 @@ urlpatterns = [
     path('small_login_form', views.Small_login_form, name="small_login_form"),
     path('PPT_Location', views.PPT_es, name="PPT"),
 
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
     
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
